@@ -1,7 +1,7 @@
 let birdsSrcs = ["bird1.gif", "bird2.gif", "bird3.gif"];
 let count=0;
 let numberbirds=0;
-let allBirds = [];
+let Birds = [];
 let bombedBirdes = [];
 let shootedbirds=[];
 
@@ -16,8 +16,8 @@ const moveRight=function(bird, left, top)
         bird.style.left = left + "px";
     } else {
         clearInterval(id);
-        let index = allBirds.indexOf(bird);
-        allBirds.splice(index, 1);
+        let index = Birds.indexOf(bird);
+        Birds.splice(index, 1);
         bird.remove();
     }
 }, 100);
@@ -51,15 +51,15 @@ const createBird = () => {
   let top = Math.random() * (innerHeight - bird.height);
   bird.style.top = top + "px";
   bird.style.left = "0px";
-  allBirds.push(bird);
+  Birds.push(bird);
   moveRight(bird, 0, top);
     
     bird.addEventListener("click",function shoot(){
 
-      allBirds.forEach(function(bird) {
+      Birds.forEach(function(bird) {
         shootedbirds.push(bird.src.slice(-9, -4))
-        let index = allBirds.indexOf(bird);
-                    allBirds.splice(index, 1);
+        let index = Birds.indexOf(bird);
+                    Birds.splice(index, 1);
                     bird.remove();
     });
     shootedbirds.forEach(function(shooted) {
@@ -136,7 +136,7 @@ let createBomb = () => {
       setTimeout(function() {
           firedBomb.remove();
       }, 500);
-      allBirds.forEach(function(bird) {
+      Birds.forEach(function(bird) {
           let birdLeft = +bird.style.left.replace("px", "");
           let birdTop = +bird.style.top.replace("px", "");
           let birdWidth = bird.width;
@@ -146,8 +146,8 @@ let createBomb = () => {
               birdTop + birdHeight >= bombTop &&
               birdTop <= bombTop + bombHeight) {
               bombedBirdes.push(bird.src.slice(-9, -4));
-              let index = allBirds.indexOf(bird);
-              allBirds.splice(index, 1);
+              let index = Birds.indexOf(bird);
+              Birds.splice(index, 1);
               bird.remove();
           }
       });
@@ -185,11 +185,11 @@ let createBomb = () => {
     var user=localStorage.getItem("name");
     document.querySelector(".name").innerHTML="welcome :" + user;
 
-    let id1 = setInterval(() => {
+    
     
       createBomb();
       
-      }, 1000000);
+     
     
     let id2 = setInterval(() => {
     
@@ -223,7 +223,7 @@ let createBomb = () => {
       }
   
       clearInterval(cancel)
-      clearInterval(id1)
+       
       clearInterval(id2)
 
     },60000)
