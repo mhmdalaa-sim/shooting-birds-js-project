@@ -1,0 +1,126 @@
+body{
+    background-image: url("./Assets/stage.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-attachment: fixed;
+}
+img{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top:20;
+}
+.flip
+{
+    transform:rotateY(180deg)
+}
+
+.bird1{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    
+    animation: bird1 15s infinite
+    
+    
+}
+.bird2{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    
+    animation: bird2 10s infinite
+    
+}
+.bird3{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    right: 80%;
+}
+
+
+#aim{
+    position:absolute;
+    width:100px;
+    height:auto;
+}
+.score{
+    width: 100px; 
+    height: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+   color: rgb(0, 6, 11);
+ 
+    
+
+}
+
+.birdnum{
+    width: 100px; 
+    height: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+   color: rgb(0, 6, 11);
+ 
+    
+   
+}
+.name{
+
+    width: 100px; 
+    height: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+   color: rgb(0, 6, 11);
+
+}
+.seconds-counter{
+
+    width: 100px; 
+    height: 50px;
+    font-size: 2rem;
+    font-weight: bold;
+   color: rgb(0, 6, 11);
+    
+}
+.results{
+    display: none;
+    
+}
+
+
+
+.bomb {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+}
+.bird {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    
+    animation: bird1 15s infinite
+}
+
+@keyframes bird1 {
+    10% {left:20%; bottom: 30%;}
+    30% {left:30%; bottom: 50%;}
+    50% {left:40%; bottom: 70%;}
+    70% {left:60%; bottom: 30%;}
+    100% {left:100%; bottom: 100%;}
+}
+
+@keyframes bird2 {
+    10% {left:7%; bottom: 17%;}
+    30% {left:33%; bottom: 43%;}
+    50% {left:55%; bottom: 60%;}
+    70% {left:77%; bottom: 17%;}
+    100% {left:92%; bottom: 92%;}
+}
+
+
+
